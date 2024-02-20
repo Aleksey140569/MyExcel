@@ -1,15 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
   const isDev = !isProd;
 
-  const filename = ext => isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`;
+  const filename = (ext) => isProd ? `[name].[contenthash].bundle.${ext}` :
+  `[name].bundle.${ext}`;
 
   const plugins = () => {
     const base = [
@@ -19,7 +19,7 @@ module.exports = (env, argv) => {
       new CopyPlugin({
         patterns: [
           {
-            from: path.resolve(__dirname, 'src', 'favicon.ico'), 
+            from: path.resolve(__dirname, 'src', 'favicon.ico'),
             to: path.resolve(__dirname, 'dist'),
           },
         ],
@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
   return {
     context: path.resolve(__dirname, 'src'),
     entry: {
-      main: 
+      main:
         './index.js'
     },
     output: {
@@ -70,15 +70,15 @@ module.exports = (env, argv) => {
           test: /\.s[ac]ss$/i,
           use: [
             MiniCssExtractPlugin.loader,
-            "css-loader",
-            "sass-loader",
+            'css-loader',
+            'sass-loader',
           ],
         },
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
           use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env']
             }
