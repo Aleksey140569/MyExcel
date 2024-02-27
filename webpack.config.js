@@ -22,6 +22,10 @@ module.exports = (env, argv) => {
             from: path.resolve(__dirname, 'src', 'favicon.ico'),
             to: path.resolve(__dirname, 'dist'),
           },
+          {
+            from: path.resolve(__dirname, 'src/fonts'),
+            to: path.resolve(__dirname, 'dist/assets/fonts'),
+          },
         ],
       }),
       new MiniCssExtractPlugin({
@@ -44,6 +48,7 @@ module.exports = (env, argv) => {
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
+      assetModuleFilename: 'assets/fonts/[hash][ext][query]',
       filename: filename('js'),
       clean: true
     },
@@ -82,8 +87,12 @@ module.exports = (env, argv) => {
             options: {
               presets: ['@babel/preset-env']
             }
-          }
-        }
+          },
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: 'asset/resource',
+        },
       ],
     }
   }
