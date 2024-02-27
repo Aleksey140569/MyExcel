@@ -1,7 +1,7 @@
 {
-  "name": "myexel",
+  "name": "myexcel",
   "version": "1.0.0",
-  "description": "Создание собственного приложения имитирующего Exel.",
+  "description": "Создание собственного приложения имитирующего Excel.",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack serve --mode=development",
@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "clear": "^0.1.0"
+    "clear": "^0.1.0",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
