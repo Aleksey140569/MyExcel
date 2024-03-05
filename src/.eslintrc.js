@@ -10,4 +10,11 @@ module.exports = {
     node: true,
     es6: true
   },
+  rules: {
+    'require-jsdoc': 'off',
+    'operator-linebreak': 'off'
+  },
+  settings: {
+    'import/resolver': 'webpack',
+  },
 }

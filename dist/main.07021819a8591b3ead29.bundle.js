@@ -1,0 +1,1 @@
+(()=>{"use strict";class s{}class e extends s{toHtml(){return""}}const t=new class{constructor(s,e){this.$el=document.querySelector(s),this.components=e.components||[]}}("#app",{components:[class extends e{},class extends e{},class extends e{},class extends e{}]});console.log("Excel",t)})();
