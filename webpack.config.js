@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+// const eslintImportResolverWebpack = require('eslint-import-resolver-webpack')
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
   const isDev = !isProd;
+
 
   const filename = (ext) => isProd ? `[name].[contenthash].bundle.${ext}` :
   `[name].bundle.${ext}`;
@@ -85,7 +87,8 @@ module.exports = (env, argv) => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-transform-class-properties']
             }
           },
         },
