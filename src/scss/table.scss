@@ -26,6 +26,7 @@
     height: 100%;
     justify-content: center;
     min-width: $info-self-width;
+    position: relative;
   }
 
   .row-data {
@@ -42,6 +43,7 @@
     justify-content: center;
     height: 100%;
     min-width: 40px;
+    position: relative;
     width: $cell-width;
   }
 
@@ -59,8 +61,38 @@
 
     &.selected {
       border: none;
-      outline: 2px solid #3c74ff;
+      outline: 2px solid $primary-color;
       z-index: 2;
+    }
+  }
+
+  .col-resize, .row-resize {
+    background: $primary-color;
+    bottom: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .col-resize {
+    top: 0;
+    width: 4px;
+
+    &:hover {
+      cursor: col-resize;
+    }
+  }
+
+  .row-resize {
+    height: 4px;
+    left: 0;
+
+    &:hover {
+      cursor: row-resize;
     }
   }
 }
