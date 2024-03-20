@@ -15,6 +15,7 @@ module.exports = {
     'semi': 'off',
     'no-unused-vars': 'off',
     'comma-dangle': 'off',
-    'require-jsdoc': 'off'
+    'require-jsdoc': 'off',
+    'no-debugger': 'off'
   }
 }
