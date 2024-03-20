@@ -12,7 +12,7 @@ function toCell(_, col) {
 
 function toColumn(col, index) {
   return `
-    <div class="column" data-type="resizeable" data-col="${index}">
+    <div class="column" data-type="resizable" data-col="${index}">
       ${col}
       <div class="col-resize" data-resize="col"></div>
     </div>
@@ -25,7 +25,7 @@ function createRow(index, content) {
    : '';
 
   return ` 
-    <div class="row">
+    <div class="row" data-type="resizable">
       <div class="row-info">
         ${index ? index : ''}
         ${resize}
