@@ -16,4 +16,8 @@
   .button {
     @include button(green);
   }
+
+  span.material-icons.active {
+    @include button(green);
+  }
 }
