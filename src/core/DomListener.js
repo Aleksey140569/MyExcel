@@ -15,8 +15,9 @@ export class DomListener {
       const method = getMethodName(listener);
 
       if (!this[method]) {
-        throw new Error(`Method ${method} is not 
-        implemented in ${this.name} Component!`);
+        const name = this.name || '';
+        throw new Error(
+            `Method ${method} is not implemented in ${name} Component!`);
       }
 
       this[method] = this[method].bind(this);
