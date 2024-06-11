@@ -15,6 +15,12 @@ class Dom {
     return this.$el.outerHTML.trim();
   }
 
+  clear() {
+    this.html('');
+
+    return this;
+  }
+
   text(text) {
     if (typeof text !== 'undefined') {
       this.$el.textContent = text;
@@ -27,12 +33,6 @@ class Dom {
     }
 
     return this.$el.textContent.trim();
-  }
-
-  clear() {
-    this.html('');
-
-    return this;
   }
 
   on(eventType, callback) {
@@ -79,8 +79,8 @@ class Dom {
 
   css(styles = {}) {
     Object
-        .keys(styles).
-        forEach((key) => {
+        .keys(styles)
+        .forEach((key) => {
           this.$el.style[key] = styles[key];
         });
   }
